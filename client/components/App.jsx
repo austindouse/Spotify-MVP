@@ -1,5 +1,8 @@
 import React, {Component} from "react";
+import {Row, Col, Container} from "react-bootstrap";
 import Spotify from "spotify-web-api-js";
+import LoginButton from "./LoginButton";
+import ArtistDisplay from "./ArtistDisplay";
 import "../App.css";
 
 const spotifyHelpers = new Spotify();
@@ -10,12 +13,11 @@ class App extends Component {
     const params = this.getHashParams();
     this.state = {
       loggedIn: params.access_token ? true : false,
-      response: "",
     };
     if (params.access_token) {
       spotifyHelpers.setAccessToken(params.access_token);
     }
-    this.getUserInfo = this.getUserInfo.bind(this);
+    // this.getUserInfo = this.getUserInfo.bind(this);
   }
   getHashParams() {
     var hashParams = {};
@@ -28,21 +30,18 @@ class App extends Component {
     return hashParams;
   }
 
-  getUserInfo() {
-    spotifyHelpers.getMyTopArtists().then((results) => {
-      console.log(results);
-    });
-  }
   render() {
     return (
       <div>
-        <a href="http://localhost:8888/login">
-          <button>Login In With Spotify!</button>
-        </a>
-        <button onClick={() => this.getUserInfo()}>
-          Click for response hopefully!
-        </button>
-        <div>Get Other Info: {this.state.response}</div>
+        <LoginButton loggedIn={this.state.loggedIn} />
+        <Container fluid>
+          <Row>
+            <Col>
+              <ArtistDisplay loggedIn={this.state.loggedIn} />
+            </Col>
+            <Col></Col>
+          </Row>
+        </Container>
       </div>
     );
   }
