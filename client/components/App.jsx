@@ -36,7 +36,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <a href="http://localhost:8888">
+        <a href="http://localhost:8888/login">
           <button>Login In With Spotify!</button>
         </a>
         <button onClick={() => this.getUserInfo()}>
