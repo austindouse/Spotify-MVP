@@ -30,9 +30,7 @@ class App extends Component {
 
   getUserInfo() {
     spotifyHelpers.getMyTopArtists().then((results) => {
-      this.setState({
-        response: results,
-      });
+      console.log(results);
     });
   }
   render() {
