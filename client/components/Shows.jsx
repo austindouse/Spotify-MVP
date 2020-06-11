@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import {Table} from "react-bootstrap";
 
 const Shows = ({currentShows}) => {
-  console.log("shows", currentShows);
   return (
     <div>
       {/* <ListGroup variant="flush">
@@ -22,6 +21,7 @@ const Shows = ({currentShows}) => {
           : "No Shows Currently Scheduled"}
       </ListGroup> */}
       <div>
+        <h3>Upcoming Shows</h3>
         <Table responsive>
           <thead>
             <tr>
