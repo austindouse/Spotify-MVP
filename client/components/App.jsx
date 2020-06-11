@@ -39,7 +39,6 @@ class App extends Component {
             <Col>
               <ArtistDisplay loggedIn={this.state.loggedIn} />
             </Col>
-            <Col></Col>
           </Row>
         </Container>
       </div>
