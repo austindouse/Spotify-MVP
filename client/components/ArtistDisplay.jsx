@@ -38,7 +38,6 @@ const ArtistDisplay = ({loggedIn}) => {
     spotifyHelpers
       .getMe()
       .then((results) => {
-        console.log("results", results);
         setDisplayName(results.display_name);
       })
       .catch((err) => {
@@ -47,12 +46,10 @@ const ArtistDisplay = ({loggedIn}) => {
   };
 
   const handleChange = (e) => {
-    console.log("target", e.target.value);
     setSearchEvent(e.target.value);
   };
 
   const handleSearch = (searchEvent) => {
-    console.log("search event", searchEvent);
     getShows(searchEvent);
     setSearchEvent("");
   };
