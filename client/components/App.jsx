@@ -32,7 +32,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{paddingTop: "15px"}}>
         <LoginButton loggedIn={this.state.loggedIn} />
         <Container fluid>
           <Row>
