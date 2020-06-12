@@ -6,7 +6,7 @@ const LoginButton = ({loggedIn}) => {
       <div>
         <div className="d-flex justify-content-center align-items-center">
           {" "}
-          <a href="http://localhost:8888/login">
+          <a href="http://3.17.14.20/login">
             <button type="button" className="btn btn-dark">
               Login With Spotify
             </button>
